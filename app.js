@@ -2,15 +2,14 @@
 let books = [];
 const booksList = document.getElementById('bookcard');
 
+const content = JSON.parse(localStorage.getItem('books'));
+if (content === 0 || content === null) {
+  localStorage.setItem('books', JSON.stringify(books));
+} else {
+  books = content;
 
-  const content = JSON.parse(localStorage.getItem('books'));
-  if (content === 0 || content === null) {
-    localStorage.setItem('books', JSON.stringify(books));
-  } else {
-    books = content;
-
-    for (let i = 0; i < books.length; i += 1) {
-      const booktemplate = `
+  for (let i = 0; i < books.length; i += 1) {
+    const booktemplate = `
         <div>
             <h3 class="booktitle">${books[i].title}</h3>
             <h3 class="bookauthor">${books[i].author}</h3>
@@ -19,9 +18,9 @@ const booksList = document.getElementById('bookcard');
         </div>
         `;
 
-      booksList.innerHTML += booktemplate;
-    }
-  };
+    booksList.innerHTML += booktemplate;
+  }
+}
 
 booksList.addEventListener('click', (event) => {
   if (event.target.textContent === 'Remove') {
@@ -62,4 +61,4 @@ addbook.addEventListener('submit', (e) => {
 
   booksList.innerHTML += booktemplate;
   localStorage.setItem('books', JSON.stringify(books));
- });
+});
