@@ -109,9 +109,16 @@ To get a local copy up and running, follow these steps:
 
 👤 **Juan Pablo Guerrero Rios**
 
-- GitHub: [@Juanpa8830](https://github.com/Juanpa8830)
+- GitHub: [@PedroH-Neves](https://github.com/Juanpa8830)
 - Twitter: [@juanPa8830](https://https://twitter.com/JuanPa8830)
 - LinkedIn: [Juan Pablo Guerrero](https://www.linkedin.com/in/juanguerrerorios)
+
+👤 **Pedro Henrique Domingues Neves**
+
+- GitHub: [@PedroH-Neves](https://github.com/PedroH-Neves)
+- Twitter: [@PedroHDN710](https://twitter.com/PedroHDN710)
+- LinkedIn: [Pedro Neves](https://www.linkedin.com/in/pedro-henrique-domingues-neves-8a5878244/)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
