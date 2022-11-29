@@ -63,5 +63,4 @@ addbook.addEventListener('submit', (e) => {
 
   booksList.innerHTML += booktemplate;
   localStorage.setItem('books', JSON.stringify(books));
-  addbook.submit();
-});
+ });
