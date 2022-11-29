@@ -2,7 +2,7 @@
 let books = [];
 const booksList = document.getElementById('bookcard');
 
-window.addEventListener('load', () => {
+
   const content = JSON.parse(localStorage.getItem('books'));
   if (content === 0 || content === null) {
     localStorage.setItem('books', JSON.stringify(books));
@@ -21,8 +21,7 @@ window.addEventListener('load', () => {
 
       booksList.innerHTML += booktemplate;
     }
-  }
-});
+  };
 
 booksList.addEventListener('click', (event) => {
   if (event.target.textContent === 'Remove') {
