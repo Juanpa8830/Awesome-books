@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 let books = [];
 const booksList = document.getElementById('bookcard');
 
@@ -26,7 +27,7 @@ window.addEventListener('load', () => {
 booksList.addEventListener('click', (event) => {
   if (event.target.textContent === 'Remove') {
     const { id } = event.target;
-    books = books.filter((book) => book.id !== id);
+    books = books.filter((book) => book.id != id);
 
     localStorage.setItem('books', JSON.stringify(books));
     event.target.parentElement.remove();
