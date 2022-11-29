@@ -57,21 +57,21 @@ addbook.addEventListener('submit', (e)=>{
         id= books[books.length-1].id+1;
     }
 
-//     const newbook = {id:id, title:newtitle, author:newauthor};
+    const newbook = {id:id, title:newtitle, author:newauthor};
 
-//     books.push(newbook);
+    books.push(newbook);
 
-//     const booktemplate = `
-//     <div>
-//         <h3 class="booktitle">${newbook.title}</h3>
-//         <h3 class="bookauthor">${newbook.author}</h3>
-//         <button id="${newbook.id}" class="removebutton">Remove</button>
-//         <hr class="division">
-//     </div>
-//     `;
+    const booktemplate = `
+    <div>
+        <h3 class="booktitle">${newbook.title}</h3>
+        <h3 class="bookauthor">${newbook.author}</h3>
+        <button id="${newbook.id}" class="removebutton">Remove</button>
+        <hr class="division">
+    </div>
+    `;
 
-//     booksList.innerHTML += booktemplate;
-//     localStorage.setItem('books', JSON.stringify(books));
-//     addbook.submit();
-//     }
-// );
+    booksList.innerHTML += booktemplate;
+    localStorage.setItem('books', JSON.stringify(books));
+    addbook.submit();
+    }
+);
