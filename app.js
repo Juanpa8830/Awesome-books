@@ -46,7 +46,7 @@ class UI {
     document.getElementById('addform').reset();
   }
 
-  set removeBook(element) {
+  removeBook(element) {
     if (element.textContent === 'Remove') {
       const { id } = element;
       library = library.filter((book) => book.id.toString() !== id);
