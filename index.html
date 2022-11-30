@@ -12,32 +12,36 @@
 <body>
 
     <header>
-        <h1>Awesome books</h1>
+        <h1 class="firsttitle">Awesome books</h1>
     </header>
-    <main>
 
+    <main>
         <section>
-            <div id="bookcard">
-               
-            </div>
+            <table id="bookcard">
+
+            </table>
+       <hr class="division">
         </section>
 
         <section>
+            <h1>Add a newbook</h1>
 
             <form id="addform">
-                <div>
-                    <input type="text" id="bookname" placeholder="Title" required>
+                <div class="addform">
+                    <div>
+                        <input type="text" id="bookname" placeholder="Title" required>
+                    </div>
+                    <div>
+                        <input type="text" id="bookauthor" placeholder="author" required>
+                    </div>
+                    <button type="submit" class="addbutton">Add</button>
                 </div>
-                <div>
-                    <input type="text" id="bookauthor" placeholder="author" required>
-                </div>
-                <button class="addbutton" type="submit">Add</button>
             </form>
         </section>
 
 
     </main>
- 
+
 
 
 
