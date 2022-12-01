@@ -1,63 +1,84 @@
-let books = [];
-const booksList = document.getElementById('bookcard');
-
-const content = JSON.parse(localStorage.getItem('books'));
+let library = [];
+const content = JSON.parse(localStorage.getItem('Books'));
 if (content === 0 || content === null) {
-  localStorage.setItem('books', JSON.stringify(books));
+  localStorage.setItem('Books', JSON.stringify(library));
 } else {
-  books = content;
+  library = content;
 
-  for (let i = 0; i < books.length; i += 1) {
+  for (let i = 0; i < library.length; i += 1) {
+    const booklist = document.getElementById('bookcard');
     const booktemplate = `
-        <div>
-            <h3 class="booktitle">${books[i].title}</h3>
-            <h3 class="bookauthor">${books[i].author}</h3>
-            <button id="${books[i].id}" class="removebutton">Remove</button>
-            <hr class="division">
-        </div>
-        `;
+           <div class="card">
+            <h2 class="title">${library[i].title} by ${library[i].author}</h2>
+            <button id="${library[i].id}" class="removebutton">Remove</button>
+            </div>
+            `;
 
-    booksList.innerHTML += booktemplate;
+    booklist.innerHTML += booktemplate;
   }
 }
 
-booksList.addEventListener('click', (event) => {
-  if (event.target.textContent === 'Remove') {
-    const { id } = event.target;
-    books = books.filter((book) => JSON.stringify(book.id) !== id);
+function Book(id, title, author) {
+  this.id = id;
+  this.title = title;
+  this.author = author;
+}
 
-    localStorage.setItem('books', JSON.stringify(books));
-    event.target.parentElement.remove();
+class UI {
+  constructor(book) {
+    this.book = book;
   }
-});
 
-const addbook = document.getElementById('addform');
+  static addBook(book) {
+    const booklist = document.getElementById('bookcard');
+    const cardtemplate = `
 
-addbook.addEventListener('submit', (e) => {
-  e.preventDefault();
+                <div class="card">
+                <h2 class="title">${book.title} by ${book.author}</h2>
+                <button id="${book.id}" class="removebutton">Remove</button>
+                </div>
+                `;
+    booklist.innerHTML += cardtemplate;
+  }
 
-  const newtitle = document.getElementById('bookname').value;
-  const newauthor = document.getElementById('bookauthor').value;
+  static resetForm() {
+    document.getElementById('addform').reset();
+  }
+
+  removeBook(element) {
+    if (element.textContent === 'Remove') {
+      const { id } = element;
+      library = library.filter((book) => book.id.toString() !== id);
+      localStorage.setItem('Books', JSON.stringify(library));
+      element.parentElement.remove();
+    }
+    return this.book;
+  }
+}
+
+// DOM events
+
+document.getElementById('addform').addEventListener('submit', (e) => {
+  const title = document.getElementById('bookname').value;
+  const author = document.getElementById('bookauthor').value;
   let id = 0;
-  if (books.length === 0) {
+  if (library.length === 0 || library === null) {
     id = 1;
   } else {
-    id = books[books.length - 1].id + 1;
+    id = library[library.length - 1].id + 1;
   }
 
-  const newbook = { id, title: newtitle, author: newauthor };
+  const book = new Book(id, title, author);
+  library.push(book);
+  localStorage.setItem('Books', JSON.stringify(library));
+  const ui = new UI();
+  ui.addBook(book);
 
-  books.push(newbook);
+  ui.resetForm();
+  e.preventDefault();
+});
 
-  const booktemplate = `
-    <div>
-        <h3 class="booktitle">${newbook.title}</h3>
-        <h3 class="bookauthor">${newbook.author}</h3>
-        <button id="${newbook.id}" class="removebutton">Remove</button>
-        <hr class="division">
-    </div>
-    `;
-
-  booksList.innerHTML += booktemplate;
-  localStorage.setItem('books', JSON.stringify(books));
+document.getElementById('bookcard').addEventListener('click', (e) => {
+  const ui = new UI();
+  ui.removeBook(e.target);
 });
