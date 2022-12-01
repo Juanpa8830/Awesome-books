@@ -1,6 +1,3 @@
-/* eslint-disable max-classes-per-file */
-/* eslint-disable class-methods-use-this */
-
 let library = [];
 const content = JSON.parse(localStorage.getItem('Books'));
 if (content === 0 || content === null) {
@@ -21,15 +18,17 @@ if (content === 0 || content === null) {
   }
 }
 
-class Book {
-  constructor(id, title, author) {
-    this.id = id;
-    this.title = title;
-    this.author = author;
-  }
+function Book(id, title, author) {
+  this.id = id;
+  this.title = title;
+  this.author = author;
 }
 
 class UI {
+  constructor(book) {
+    this.book = book;
+  }
+
   static addBook(book) {
     const booklist = document.getElementById('bookcard');
     const cardtemplate = `
@@ -53,6 +52,7 @@ class UI {
       localStorage.setItem('Books', JSON.stringify(library));
       element.parentElement.remove();
     }
+    return this.book;
   }
 }
 
