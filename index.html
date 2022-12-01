@@ -12,19 +12,27 @@
 <body>
 
     <header>
-        <h1 class="firsttitle">Awesome books</h1>
+
+        <nav class="nav_menu">
+            <h1 class="firsttitle">Awesome books</h1>
+            <ul class="navlist">
+                <li><a class="navitem1" href="#list">List</a></li>
+                <li><a class="navitem2" href="#form">Add New</a></li>
+                <li><a class="navitem3" href="#footer">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-        <section>
+        <section id="list">
+            <h1 class="sectiontitle">All Awesome books</h1>
             <div id="bookcard" class="bookcard">
-
             </div>
-       <hr class="division">
+            <hr class="division">
         </section>
 
-        <section>
-            <h1>Add a newbook</h1>
+        <section id="form" class="show">
+            <h1>Add a new book</h1>
 
             <form id="addform">
                 <div class="addform">
@@ -39,11 +47,15 @@
             </form>
         </section>
 
+        <section id="contact" class="show">
+            <h1>Contact Information</h1>
+        </section>
+
+        <footer id="footer">
+            <p class="copyright">Copyright ...</p>
+        </footer>
 
     </main>
-
-
-
 
 
     <script src="app.js"></script>
