@@ -29,7 +29,8 @@ class UI {
     this.book = book;
   }
 
-  static addBook(book) {
+  addBook(book) {
+    this.book = book;
     const booklist = document.getElementById('bookcard');
     const cardtemplate = `
 
@@ -41,8 +42,9 @@ class UI {
     booklist.innerHTML += cardtemplate;
   }
 
-  static resetForm() {
-    document.getElementById('addform').reset();
+  resetForm(form1) {
+    this.form1 = form1;
+    form1.reset();
   }
 
   removeBook(element) {
@@ -74,11 +76,40 @@ document.getElementById('addform').addEventListener('submit', (e) => {
   const ui = new UI();
   ui.addBook(book);
 
-  ui.resetForm();
+  const form1 = document.getElementById('addform');
+  ui.resetForm(form1);
   e.preventDefault();
 });
 
 document.getElementById('bookcard').addEventListener('click', (e) => {
   const ui = new UI();
   ui.removeBook(e.target);
+});
+
+// Template function
+
+const listbutton = document.querySelector('.navitem1');
+const newbutton = document.querySelector('.navitem2');
+const contactbutton = document.querySelector('.navitem3');
+const list = document.getElementById('list');
+const form = document.getElementById('form');
+const contact = document.getElementById('contact');
+
+
+listbutton.addEventListener('click', () => {
+  list.style.display = 'flex';
+  form.classList.replace('show', 'hide');
+  contact.classList.replace('show', 'hide');
+});
+
+newbutton.addEventListener('click', () => {
+  list.style.display = 'none';
+  form.classList.replace('hide', 'show');
+  contact.classList.replace('show', 'hide');
+});
+
+contactbutton.addEventListener('click', () => {
+  list.style.display = 'none';
+  form.classList.replace('show', 'hide');
+  contact.classList.replace('hide', 'show');
 });
