@@ -9,9 +9,15 @@
   align-items: center;
 }
 
+.addform input {
+    font-size: 20px;
+}
+
 .addbutton {
-  margin-left: 8.5%;
+  margin-left: 70%;
   box-shadow: 3px 3px black;
+  font-size: 20px;
+  width: 30%;
 }
 
 #bookcard {
@@ -130,4 +136,20 @@ main {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.contp {
+    font-size: 20px;
+}
+
+h1 {
+    font-size: 30px; 
+}
+
+.contactItem {
+    font-size: 20px;
+}
+
+.contul {
+    text-align: left;
 }
