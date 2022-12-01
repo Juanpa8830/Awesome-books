@@ -1,9 +1,5 @@
-body {
-  text-align: center;
-}
-
 .division {
-  width: 25%;
+  width: 15%;
 }
 
 .addform {
@@ -21,10 +17,10 @@ body {
 #bookcard {
   display: flex;
   flex-direction: column;
-  width: 30%;
   margin: 0 auto;
   gap: 5px;
   border: 2px solid #000;
+  width:100%;
 }
 
 .bookcard div:nth-child(odd) {
@@ -41,6 +37,7 @@ body {
 
 h2 {
   font-size: 20px;
+  margin-left: 2%;
 }
 
 .removebutton {
@@ -50,4 +47,87 @@ h2 {
   height: 30px;
   font-size: 16px;
   align-self: center;
+}
+
+.nav_menu {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid #000;
+  width: 100%;
+  background-color: rgb(234, 234, 234);
+  height: 8vh;
+}
+
+.firsttitle {
+  margin-left: 3%;
+}
+
+.navlist {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin-right: 5%;
+  text-decoration-line: none;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.navitem1,
+.navitem2,
+.navitem3 {
+  text-decoration: none;
+  color: black;
+}
+
+.navitem1,
+.navitem2 {
+  border-right: 3px solid #000;
+  padding-right: 10px;
+}
+
+#list {
+  flex-direction: column;
+  margin-top: 8%;
+  width:60%;
+}
+
+#footer {
+  border: 2px solid #000;
+  background-color: rgb(234, 234, 234);
+  font-size: 20px;
+  font-weight: 900;
+  text-align: left;
+  width: 99%;
+  height: 8vh;
+  position: fixed;
+  bottom:5px;
+}
+
+.copyright {
+  margin-left: 3%;
+}
+
+#form {
+  margin-top: 8%;
+  font-size: 20px;
+}
+
+#contact {
+  margin-top: 8%;
+  height: 65vh;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: initial;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
